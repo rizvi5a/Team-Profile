@@ -1,0 +1,26 @@
+{
+  "name": "team-profile",
+  "version": "1.0.0",
+  "description": "Homework 10",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rizvi5a/Team-Profile.git"
+  },
+  "author": "Syed Rizvi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rizvi5a/Team-Profile/issues"
+  },
+  "homepage": "https://github.com/rizvi5a/Team-Profile#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0",
+    "jest": "^26.6.3"
+  }
+}
