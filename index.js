@@ -1,14 +1,12 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-// const Employee = require('./lib/Employee');
 const Manager = require ('./lib/Manager');
 const Engineer = require ('./lib/Engineer');
 const Intern = require ('./lib/Intern');
-// const Engineer = require("./lib/Engineer");
 
-let managerList = []
-let engineerList = []
-let internList = []
+// let managerList = []
+// let engineerList = []
+// let internList = []
 
 var htmlCode = `
     <DOTYPE html>
@@ -26,57 +24,12 @@ var htmlCode = `
 <body>
    
     <div class="container p-0">
-        <nav class="bg-warning text-center>
-        <a href="#" class="btn btn-primary float-right mt-n1"><i class="fas fa-plus"></i> Team Generator</a>
-        <h1 class="h3 mb-3">Nodejs App</h1>
+        <nav class="bg-danger text-center>
+        <a href="#" class="btn btn-primary float-right mt-n1"><i class="fas fa-plus"></i> My Team</a>
+        <h1 class="h3 mb-3">Project # 20-3456-82 </h1>
         </nav>
         <div class="row d-flex justify-content-evenly">
         `
-
-
-
-//questions
-//html page
-
-// var inquirer_array = [
-// {
-//     name: " name",
-//     message: " What is Manger's  Name"
-// },
-
-// {
-//     name: " id",
-//     message: " What is Manger's  ID"
-// },
-// {
-//     name: "email",
-//     message: " What is Manger's email"
-// },
-// {
-// name: "number",
-// message: " What is Manger's office number"
-// },
-
-// ]
-
-// inquirer
-//   .prompt(inquirer_array)
-//   .then(answers => {
-//     // Use user feedback for... whatever!!
-//     console.log(answers)
-
-//     let employee = new Employee (answers.name, answers.id, answers.email)
-//     var html =generateHTML(employee);
-//     fsActions(html);
-//   })
-//   .catch(error => {
-//     if(error.isTtyError) {
-//       // Prompt couldn't be rendered in the current environment
-//     } else {
-//       console.log(error)
-//     }
-//   });
-
 
 
 
@@ -133,10 +86,7 @@ function addManager() {
     function (answers) {
       console.log(answers)
       let myManager = new Manager(answers.name, answers.id, answers.email,answers.number)
-      // managerList.push(Manager)
-
-      // console.log(managerList)
-      // console.log(managerList[1])
+     
       var role = "Manager"
 
       var html = generateHTML("Manager", myManager)
@@ -169,9 +119,8 @@ function addEngineer() {
     function (answers) {
       console.log(answers)
       let myEngineer = new Engineer(answers.name, answers.id, answers.email,answers.github)
-      // engineerList.push(Engineer)
-      // console.log(engineerList)
-      // var role = "Engineer"
+      
+       var role = "Engineer"
       var html = generateHTML("Engineer", myEngineer)
       htmlCode += html
       startMenu()
@@ -203,9 +152,7 @@ function addIntern() {
     function (answers) {
       console.log(answers)
       let myIntern = new Intern(answers.name, answers.id, answers.email,answers.school)
-      // internList.push(Intern)
-      // console.log(internList)
-      // var role = "Intern"
+      var role = "Intern"
       var html = generateHTML("Intern", myIntern)
       htmlCode += html
       startMenu()
@@ -229,19 +176,16 @@ function fsActions() {
 function generateHTML(role, Employee) {
   //var html_as_string = "<ul><li>"+Employee.getRole()+"</li><li>"+
   //Employee.getName()+"</li><li>" +Employee.getId() +"</li><li>"+ Employee.getEamil()+"</li></ul>"
-  // //new
-  //var html_as_string = `<h6>${role}</h6>`+"<ul><li>"+Employee.getName()+"</li><li>"+
-  //  Employee.getId()+"</li><li>" +Employee.getEmail()+ "</li></ul>"
-  //return html_as_string
+  
   let htmlCode = `
         
-                <div class="card" style="width: 18rem;">
+                <div class="card bg-secondary" style="width: 18rem;">
     
                     <div class="card-header px-2 pt-2">
                         <h5 class="card-title mb-0">${Employee.getName()}</h5>
                         <div class="badge bg-success my-2">${role}</div>
                     </div>
-                    <div class="card-body px-2 pt-2">
+                    <div class="card-body px-2 pt-2 ">
 
                           <ul>
                           <li> Id :  ${Employee.getId()}</li>
